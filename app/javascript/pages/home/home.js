@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import Hero from '../../components/hero/hero';
-// import About from '../../components/about/about';
+import About from '../../components/about/about';
 // import Contact from '../../components/contact/contact';
 // import Footer from '../../components/footer/footer';
 
@@ -12,6 +12,8 @@ export default class HomePage extends Component {
     return (
       <Fragment>
         <Hero />
+        <About />
+
       </Fragment>
     );
   }
