@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
+import Hero from '../../components/hero/hero';
+// import About from '../../components/about/about';
+// import Contact from '../../components/contact/contact';
+// import Footer from '../../components/footer/footer';
 
-const HomePage = props => {
-  return <div>HomePage</div>;
-};
+export default class HomePage extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Fragment>
+        <Hero />
+      </Fragment>
+    );
+  }
+}
 
-export default HomePage;
+/*
+ <Hero />
+          <About />
+          <Contact />
+          <Footer />
+*/
