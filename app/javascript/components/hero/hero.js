@@ -3,7 +3,6 @@ import './hero.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-
 import background from '../../../assets/images/index-background.jpg'
 
 const styles = {

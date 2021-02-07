@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Hero from '../../components/hero/hero';
 import About from '../../components/about/about';
-// import Contact from '../../components/contact/contact';
+import Contact from '../../components/contact/contact';
 // import Footer from '../../components/footer/footer';
 
 export default class HomePage extends Component {
@@ -13,6 +13,7 @@ export default class HomePage extends Component {
       <Fragment>
         <Hero />
         <About />
+        <Contact />
 
       </Fragment>
     );
