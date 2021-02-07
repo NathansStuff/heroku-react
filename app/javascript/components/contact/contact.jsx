@@ -3,7 +3,7 @@ import './contact.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-// import * as emailjs from 'emailjs-com';
+import * as emailjs from 'emailjs-com';
 import { Button } from 'reactstrap';
 
 class Contact extends Component {
@@ -24,16 +24,16 @@ class Contact extends Component {
       phone: phone,
       message: message,
     };
-    // emailjs
-    //   .send(
-    //     'service_oj6ecd1',
-    //     'template_wb5x5je',
-    //     templateParams,
-    //     'user_vTT2nk4pHgmYk78U5flbL'
-    //   )
-    //   .then(result => {
-    //     console.log(result);
-    //   });
+    emailjs
+      .send(
+        'service_oj6ecd1',
+        'template_wb5x5je',
+        templateParams,
+        'user_vTT2nk4pHgmYk78U5flbL'
+      )
+      .then(result => {
+        console.log(result);
+      });
     this.resetForm();
   }
   resetForm() {
