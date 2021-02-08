@@ -176,8 +176,6 @@ const Animal = props => {
 
   // Get a specific animal from the api based on the id passed in via props
   useEffect(() => {
-    // console.log(props.match.params)
-
     const id = props.match.params.id;
     const url = `/api/v1/animals/${id}`;
     setId(id);
@@ -216,6 +214,12 @@ const Animal = props => {
               handleDestroy={handleAnimalDestroy}
               id={id}
               edit={handleEditAnimalOpen}
+            />
+            <DailyUpdateForm
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              attributes={animal}
+              daily_update={daily_update}
             />
           </div>
 
