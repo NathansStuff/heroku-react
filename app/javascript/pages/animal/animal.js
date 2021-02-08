@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 // import config from '../../aws/config';
 // import S3FileUpload from 'react-s3';
 
-const Animal = props => {
+const Animal = (props) => {
     // ================================================================================================
     // EDIT ANIMAL
     // ================================================================================================
@@ -176,22 +176,24 @@ const Animal = props => {
 
     // Get a specific animal from the api based on the id passed in via props
     useEffect(() => {
-    //   const id = props.match.params.id;
-    //   const url = `/api/v1/animals/${id}`;
-    //   setId(id);
+      // console.log(props.match.params)
 
-    //   axios
-    //     .get(url)
-    //     .then(resp => {
-    //       setAnimal(resp.data.data.attributes);
-    //       setDailyUpdates(resp.data.included);
-    //       setLoaded(true);
-    //       setEditAnimalForm(resp.data.data.attributes);
-    //     })
+      const id = props.match.params.id;
+      const url = `/api/v1/animals/${id}`;
+      setId(id);
 
-    //     .catch(data => {
-    //       console.log('error', data);
-    //     });
+      axios
+        .get(url)
+        .then(resp => {
+          setAnimal(resp.data.data.attributes);
+          setDailyUpdates(resp.data.included);
+          setLoaded(true);
+          setEditAnimalForm(resp.data.data.attributes);
+        })
+
+        .catch(data => {
+          console.log('error', data);
+        });
     }, []);
     // ================================================================================================
     // DISPLAY

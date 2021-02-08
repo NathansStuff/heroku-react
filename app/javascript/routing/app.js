@@ -16,9 +16,8 @@ export default class App extends Component {
             <Route exact path='/'>
               <HomePage />
             </Route>
-            <Route exact path='/animal/:id'>
-              <Animal />
-            </Route>
+            <Route exact path='/animal/:id' component={Animal} />
+
           </Switch>
         </BrowserRouter>
       </div>
