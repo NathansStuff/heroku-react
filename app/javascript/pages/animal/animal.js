@@ -1,9 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import DisplayCard from '../../components/display-card/displayCard';
-// import DailyUpdateForm from '../../components/daily-update-form/daily-update-form';
+import DailyUpdateForm from '../../components/daily-update-form/daily-update-form';
+import DailyHistory from '../../components/daily-history/daily-history';
 import './animal.scss';
-// import DailyHistory from '../../components/daily-history/daily-history';
 import { useHistory } from 'react-router-dom';
 import EditAnimalForm from '../../components/edit-animal-form/edit-animal-form';
 // import config from '../../aws/config';
@@ -57,6 +57,7 @@ const Animal = props => {
   };
 
   const submitEditAnimalForm = () => {
+    console.log('editing');
     const id = props.match.params.id;
     editAnimalForm.microchip_number === ''
       ? setEditAnimalForm({ microchip: false })
@@ -199,45 +200,35 @@ const Animal = props => {
   // ================================================================================================
   return (
     <div>
-      <Fragment>
-        <EditAnimalForm
-          open={openEditAnimal}
-          handleClose={handleEditAnimalClose}
-          handleChange={handleEditAnimalFormChange}
-          handleSubmit={handleEditAnimalFormSubmit}
-          animal={editAnimalForm}
-          handleFile={handleFile}
-        />
-        <div className='show-top'>
-          <DisplayCard
-            attributes={animal}
-            handleDestroy={handleAnimalDestroy}
-            id={id}
-            edit={handleEditAnimalOpen}
+      {loaded && (
+        <Fragment>
+          <EditAnimalForm
+            open={openEditAnimal}
+            handleClose={handleEditAnimalClose}
+            handleChange={handleEditAnimalFormChange}
+            handleSubmit={handleEditAnimalFormSubmit}
+            animal={editAnimalForm}
+            handleFile={handleFile}
           />
-        </div>
-        <div className='show-bot'></div>
-      </Fragment>
+          <div className='show-top'>
+            <DisplayCard
+              attributes={animal}
+              handleDestroy={handleAnimalDestroy}
+              id={id}
+              edit={handleEditAnimalOpen}
+            />
+          </div>
+
+          <div className='show-bot'>
+            <DailyHistory
+              attributes={daily_updates}
+              handleDestroy={handleDestroy}
+            />
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 };
 
 export default Animal;
-
-/*
-
-
-
-
-          <DailyUpdateForm
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          attributes={animal}
-          daily_update={daily_update}
-        />
-
-        <DailyHistory
-              attributes={daily_updates}
-              handleDestroy={handleDestroy}
-            />
-            */
