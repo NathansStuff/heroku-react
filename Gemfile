@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # =============================================================================
 gem 'fast_jsonapi' # creates the json serialiser that the API spits out
 gem 'bootstrap-sass'
+gem 'dotenv-rails'
 # =============================================================================
 # =============================================================================
 

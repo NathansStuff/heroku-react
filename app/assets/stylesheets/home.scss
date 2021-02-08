@@ -1,3 +1,24 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.display-card {
+    min-width: 100%;
+    padding: 10px 0;
+}
+.display-card-image img {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.display-card-img {
+    width: 100%;    
+}
+
+.display-card-info {
+    margin-bottom: 10px;
+    div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    height: 35px;
+    }
+}
